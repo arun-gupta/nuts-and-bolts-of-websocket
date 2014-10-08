@@ -1,0 +1,71 @@
+Nuts and Bolts of WebSocket
+===========================
+
+## Introduction to WebSocket
+
+* WebSocket introduction slides
+* Chrome Developer Tools, Console
++
+[source,text]
+----
+ws = new WebSocket("ws://echo.websocket.org");
+ws.send("hello world");
+----
++
+* In Network tab, show WebSocket frames
+* Define message handlers
++
+[source, text]
+----
+ws.onmessage = function(evt) { console.log(evt) }
+----
++
+or
++
+[source, text]
+----
+ws.onmessage = function(evt) { alert(evt.data) }
+----
++
+* Copy/paste fragment from websocket.org/echo.html
+** Show Firefox Developer Tools
+* Use http://caniuse.com/websockets to check WebSocket compatibility
+* WebSocket server is required, just like HTTP
+
+## WebSocket using JSR 356
+
+## WebSocket using Undertow/WildFly
+
+## WebSocket using Atmosphere
+
+## WebSocket using Socket.io
+
+## Pub/Sub over WebSocket
+### JMS
+### MQTT, STOMP over WebSocket
+
+## Autbahn
+
+## Comparing with REST
+
+## Apply event-driven concept to REST
+
+## WebSocket in OpenShift
+
+## Contrast with SSE
+
+## Contrast with Java Applet, Flash, Adobe AIR, Silverlight, Web RTC
+
+## Surviving Firewall and Proxy
+### wss solves 95%
+### Use battle-tested product
+
+## WebSocket Debugging
+### Chrome Developer Tools
+### Wireshark (typically required when building custom protocols)
+
+## WebSocket Production Tips
+### Share some of Kaazing experiences - clustering, LB, session failover, scale/capacity planning
+
+## Client technologies (supporting other languages - Java APIs or .NET APIs)
+
