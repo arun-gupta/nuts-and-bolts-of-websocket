@@ -58,10 +58,12 @@ ws.onmessage = function(evt) { alert(evt.data) }
 ## WebSocket using Atmosphere
 
 ## Pub/Sub over WebSocket
-### JMS
-### MQTT, STOMP over WebSocket
+### JMS - Need further discussion
+### Showcase http://demo.kaazing.com/demo/jms/javascript/jms-javascript.html
+### Showcase http://demo.kaazing.com/demo/jms/javascript/?d=stomp-stock with ActiveMQ on OpenShift
+### MQTT, STOMP over WebSocket - Read details on http://www.amazon.com/The-Definitive-Guide-HTML5-WebSocket/dp/1430247401
 
-## Autbahn
+## Autobahn??
 
 ## Comparing with REST
 
@@ -88,3 +90,8 @@ ws.onmessage = function(evt) { alert(evt.data) }
 ### Kaazing Client API
 
 ## Native App (Objective C and Java Android)
+
+## Embedded and IoT
+### Bring the two devices
+
+
