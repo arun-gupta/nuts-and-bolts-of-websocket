@@ -40,13 +40,27 @@ ws.onmessage = function(evt) { alert(evt.data) }
 
 ## WebSocket using JSR 356
 
-* Introduction to JSR 356
-* Hello World - explain and build using WildFly
-* Chat Server
-* Collaborative Whiteboard
-* URI templating matching - message routing
-* Client API - real-time entering of data, for example Google Docs
-* Talk through programmatic endpoint
+### Introduction to JSR 356
+
+Show the slides
+
+### Chat Server - explain and build using WildFly
+
+https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/chat
+
+### Collaborative Whiteboard
+
+https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/whiteboard
+
+### URI templating matching - message routing
+
+### Client API
+
+https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/google-docs
+
+### Programmatic endpoint
+
+https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/endpoint-singleton
 
 ## WebSocket Security
 
@@ -54,6 +68,8 @@ ws.onmessage = function(evt) { alert(evt.data) }
 ** Cannot make ws:// from https:// page
 
 ## WebSocket using Undertow/WildFly
+
+https://github.com/undertow-io/undertow/blob/master/examples/src/main/java/io/undertow/examples/chat/ChatServer.java
 
 ## WebSocket using Atmosphere
 
@@ -71,7 +87,11 @@ ws.onmessage = function(evt) { alert(evt.data) }
 
 ## WebSocket in OpenShift
 
+https://blog.openshift.com/how-to-build-java-websocket-applications-using-the-jsr-356-api/
+
 ## Contrast with SSE
+
+Use slides
 
 ## Contrast with Java Applet, Flash, Adobe AIR, Silverlight, Web RTC
 
@@ -90,6 +110,6 @@ include::production.asciidoc[]
 ## Native App (Objective C and Java Android)
 
 ## Embedded and IoT
-### Bring the two devices
+### Peter to bring the two devices
 
 
