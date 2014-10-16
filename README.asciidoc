@@ -76,15 +76,13 @@ ws.onmessage = function(evt) { alert(evt.data) }
 ## Contrast with Java Applet, Flash, Adobe AIR, Silverlight, Web RTC
 
 ## Surviving Firewall and Proxy
-### wss solves 95%
-### Use battle-tested product
+include::firewall.asciidoc[]
 
 ## WebSocket Debugging
-### Chrome Developer Tools
-### Wireshark (typically required when building custom protocols)
+include::debugging.asciidoc[]
 
 ## WebSocket Production Tips
-### Share some of Kaazing experiences - clustering, LB, session failover, scale/capacity planning
+include::production.asciidoc[]
 
 ## Client technologies (supporting other languages - Java APIs or .NET APIs)
 ### Kaazing Client API
