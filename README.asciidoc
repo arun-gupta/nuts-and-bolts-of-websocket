@@ -36,14 +36,40 @@ ws.onmessage = function(evt) { alert(evt.data) }
 
 ## WebSocket using Socket.io
 
-. Create a NodeJS application
+### Get started with OpenShift
+
+. Create a new account https://www.openshift.com/app/account/new
+. Install rhc client from https://developers.openshift.com/en/getting-started-client-tools.html
+
+### Create your first NodeJS application on OpenShift
+
+. Install NodeJS
+. Create a NodeJS application on OpenShift
 . git clone
-. npm install start
+. npm install (will install the modules locally)
 . git add --all
 . git commit
 . git push
 
-* Show a simple sample, host NodeJS on OpenShift, use websocket.org client page
+### Add a simple echo server
+
+. Copy the file from https://github.com/javaee-samples/javaee7-websocket/blob/master/src/index.js
+. git add index.js
+. npm install --save ws
+. git add --all
+. git commit
+. git push
+
+### Test the echo server
+
+. Use http://www.websocket.org/echo.html
+. Connect to ws://<appname>-<domain>.rhccloud.com
+. Send some messages
+
+
+### WebSocket in OpenShift
+
+https://dl.dropboxusercontent.com/u/61433005/OpenShift/Web%20Socket%20and%20Http%20routing%20on%20OpenShift.png
 
 ## WebSocket using JSR 356
 
@@ -123,3 +149,16 @@ include::production.asciidoc[]
 
 ## Autobahn??
 
+
+## Cool demos to showcase
+
+. http://twglobe-shifter.rhcloud.com/ using pubnub, pusher.io and twitter streaming API
+. 
+
+	
+ryan jarvinen	12:31 PM
+http://twglobe-shifter.rhcloud.com
+pubnub, pusher.io
+http://gist-reveal.it
+markdown in slides - https://gist.github.com/ryanj/35f0ca1f824ee209c3f9#file-oss-mapping-adventures-html-L26
+http://gist-reveal.it/35f0ca1f824ee209c3f9#/
