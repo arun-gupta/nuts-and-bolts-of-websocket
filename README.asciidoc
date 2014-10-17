@@ -71,7 +71,13 @@ https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/endpoint
 
 https://github.com/undertow-io/undertow/blob/master/examples/src/main/java/io/undertow/examples/chat/ChatServer.java
 
-## WebSocket using Atmosphere
+## WebSocket in OpenShift
+
+https://blog.openshift.com/how-to-build-java-websocket-applications-using-the-jsr-356-api/
+
+## Kaazing Gateway
+
+https://github.com/arun-gupta/kaazing-openshift-cartridge
 
 ## Pub/Sub over WebSocket
 ### JMS - Need further discussion
@@ -79,15 +85,11 @@ https://github.com/undertow-io/undertow/blob/master/examples/src/main/java/io/un
 ### Showcase http://demo.kaazing.com/demo/jms/javascript/?d=stomp-stock with ActiveMQ on OpenShift
 ### MQTT, STOMP over WebSocket - Read details on http://www.amazon.com/The-Definitive-Guide-HTML5-WebSocket/dp/1430247401
 
-## Autobahn??
+## WebSocket using Atmosphere
 
 ## Comparing with REST
 
 ## Apply event-driven concept to REST
-
-## WebSocket in OpenShift
-
-https://blog.openshift.com/how-to-build-java-websocket-applications-using-the-jsr-356-api/
 
 ## Contrast with SSE
 
@@ -112,4 +114,5 @@ include::production.asciidoc[]
 ## Embedded and IoT
 ### Peter to bring the two devices
 
+## Autobahn??
 
