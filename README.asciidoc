@@ -36,6 +36,13 @@ ws.onmessage = function(evt) { alert(evt.data) }
 
 ## WebSocket using Socket.io
 
+. Create a NodeJS application
+. git clone
+. npm install start
+. git add --all
+. git commit
+. git push
+
 * Show a simple sample, host NodeJS on OpenShift, use websocket.org client page
 
 ## WebSocket using JSR 356
