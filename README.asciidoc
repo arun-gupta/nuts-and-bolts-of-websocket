@@ -174,7 +174,7 @@ Use ``websocket'' as the password.
 <security-realm name="WebSocketRealm">
 	<server-identities>
     	<ssl protocol="TLS">
-        	<keystore path="websocket.keystore" relative-to="jboss.server.config.dir" keystore-password="websocket" alias="websocket"/>
+        	<keystore path="websocket.keystore" relative-to="jboss.server.config.dir" keystore-password="websocket"/>
         </ssl>
     </server-identities>
 </security-realm>
@@ -192,8 +192,8 @@ Uncaught SecurityError: Failed to construct 'WebSocket': An insecure WebSocket c
 
 ## Comparing with REST
 
-https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/websocket-vs-rest-payload
-https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/websocket-vs-rest
+. https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/websocket-vs-rest-payload
+. https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/websocket-vs-rest
 
 ## Contrast with SSE
 
