@@ -112,10 +112,7 @@ https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/endpoint
 
 ## WebSocket Security
 
-* Securing WebSockets
-** Cannot make ws:// from https:// page
-
-*** URL-based security
+### URL-based security
 
 . git clone https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/endpoint-security
 . Add a new user to WildFly
@@ -130,18 +127,11 @@ Added user 'u1' with groups g1 to file '/Users/arungupta/tools/wildfly-8.1.0.Fin
 ----
 +
 . `mvn wildfly:deploy`
-. Access the application at http://localhost:8080/endpoint-security/, use `u1` username and `p1` password. All others are incorrect.
+. Access the application at http://localhost:8080/endpoint-security/, use `u1` username and `p1` password. All other values are incorrect.
 
-*** Over TLS
+### Over TLS
 
-. Add https-listener in `standalone/configuration/standalone.xml`
-+
-[source,text]
-----
-<https-listener name="default-https" socket-binding="https" security-realm="WebSocketRealm"/>
-----
-+
-Configure SSL in WildFly per https://docs.jboss.org/author/pages/viewpage.action?pageId=66322705
+. Create keystore
 +
 [source, text]
 ----
@@ -169,7 +159,14 @@ Re-enter new password:
 ----
 +
 Use ``websocket'' as the password.
-. Copy ``websocket.keystore'' in standalone/configuration directory.
+. Copy ``websocket.keystore'' in `standalone/configuration` directory.
+. Add https-listener in `standalone/configuration/standalone.xml`
++
+[source,text]
+----
+<https-listener name="default-https" socket-binding="https" security-realm="WebSocketRealm"/>
+----
++
 . Add the following `<security-realm>`
 +
 [source, text]
@@ -196,8 +193,6 @@ Use ``websocket'' as the password.
 ----
 Uncaught SecurityError: Failed to construct 'WebSocket': An insecure WebSocket connection may not be initiated from a page loaded over HTTPS.
 ----
-+
-. asd
 
 
 ## Comparing with REST
