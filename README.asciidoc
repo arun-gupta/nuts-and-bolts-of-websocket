@@ -100,6 +100,8 @@ https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/whiteboa
 
 ### URI templating matching - message routing
 
+https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/parameters
+
 ### Client API
 
 https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/google-docs
@@ -113,9 +115,90 @@ https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/endpoint
 * Securing WebSockets
 ** Cannot make ws:// from https:// page
 
-## WebSocket using Undertow/WildFly
+*** URL-based security
 
-https://github.com/undertow-io/undertow/blob/master/examples/src/main/java/io/undertow/examples/chat/ChatServer.java
+. git clone https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/endpoint-security
+. Add a new user to WildFly
++
+[source, text]
+----
+wildfly-8.1.0.Final> ./bin/add-user.sh -a -u u1 -p p1 -g g1
+Added user 'u1' to file '/Users/arungupta/tools/wildfly-8.1.0.Final/standalone/configuration/application-users.properties'
+Added user 'u1' to file '/Users/arungupta/tools/wildfly-8.1.0.Final/domain/configuration/application-users.properties'
+Added user 'u1' with groups g1 to file '/Users/arungupta/tools/wildfly-8.1.0.Final/standalone/configuration/application-roles.properties'
+Added user 'u1' with groups g1 to file '/Users/arungupta/tools/wildfly-8.1.0.Final/domain/configuration/application-roles.properties'
+----
++
+. `mvn wildfly:deploy`
+. Access the application at http://localhost:8080/endpoint-security/, use `u1` username and `p1` password. All others are incorrect.
+
+*** Over TLS
+
+. Add https-listener in `standalone/configuration/standalone.xml`
++
+[source,text]
+----
+<https-listener name="default-https" socket-binding="https" security-realm="WebSocketRealm"/>
+----
++
+Configure SSL in WildFly per https://docs.jboss.org/author/pages/viewpage.action?pageId=66322705
++
+[source, text]
+----
+keytool -genkey -alias websocket -keyalg RSA -keystore websocket.keystore -validity 10950
+Enter keystore password:  
+Re-enter new password: 
+What is your first and last name?
+  [Unknown]:  Arun Gupta
+What is the name of your organizational unit?
+  [Unknown]:  JBoss Middleware
+What is the name of your organization?
+  [Unknown]:  Red Hat
+What is the name of your City or Locality?
+  [Unknown]:  San Jose
+What is the name of your State or Province?
+  [Unknown]:  CA
+What is the two-letter country code for this unit?
+  [Unknown]:  US
+Is CN=Arun Gupta, OU=JBoss Middleware, O=Red Hat, L=San Jose, ST=CA, C=US correct?
+  [no]:  yes
+
+Enter key password for <websocket>
+	(RETURN if same as keystore password):  
+Re-enter new password:
+----
++
+Use ``websocket'' as the password.
+. Copy ``websocket.keystore'' in standalone/configuration directory.
+. Add the following `<security-realm>`
++
+[source, text]
+----
+<security-realm name="WebSocketRealm">
+	<server-identities>
+    	<ssl protocol="TLS">
+        	<keystore path="websocket.keystore" relative-to="jboss.server.config.dir" keystore-password="websocket" alias="websocket"/>
+        </ssl>
+    </server-identities>
+    <authentication>
+        <truststore path="websocket.keystore" relative-to="jboss.server.config.dir" keystore-password="websocket"/>
+    </authentication>
+</security-realm>
+----
++
+. git clone https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/endpoint-wss
+. `mvn wildfly:deploy` to deploy on WildFly
+. Access http://localhost:8080/endpoint-wss
+.. See how the request is redirected to https
+. In `websocket.js`, change ``wss'' to ``ws'', deploy it again and look for the following error in Developer Tools Console:
++
+[source, text]
+----
+Uncaught SecurityError: Failed to construct 'WebSocket': An insecure WebSocket connection may not be initiated from a page loaded over HTTPS.
+----
++
+. asd
+
 
 ## Comparing with REST
 
@@ -125,6 +208,46 @@ https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/websocke
 ## Contrast with SSE
 
 Use slides
+
+## Embedded WebSocket using Undertow/WildFly
+
+. git clone git@github.com:undertow-io/undertow.git
+. `mvn install` in the root
+. `mvn exec:exec` in `examples' directory
+
+## JBoss EAP 6.3
+
+. Clone https://github.com/arun-gupta/wildfly-samples/tree/master/websocket-eap63
+. Start EAP 6.3
+. Setup NIO connector
++
+[source. java]
+----
+./bin/jboss-cli.sh -c --command="/subsystem=web/connector=http/:write-attribute(name=protocol,value=org.apache.coyote.http11.Http11NioProtocol)
+> 
+jboss-eap-6.3> ./bin/jboss-cli.sh -c --command="/subsystem=web/connector=http/:write-attribute(name=protocol,value=org.apache.coyote.http11.Http11NioProtocol)"
+{
+    "outcome" => "success",
+    "response-headers" => {
+        "operation-requires-reload" => true,
+        "process-state" => "reload-required"
+    }
+}
+----
++
+. Reload configuration
++
+[source, java]
+----
+./bin/jboss-cli.sh -c --command="reload"
+----
++
+. mvn package jboss-as:deploy
+. Access the application at http://localhost:8080/websocket-chat-1.0-SNAPSHOT/
+
+## Load Balance
+
+http://blog.arungupta.me/2014/08/load-balance-websockets-apache-httpd-techtip48/
 
 ## Kaazing Gateway
 
