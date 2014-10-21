@@ -185,15 +185,13 @@ Use ``websocket'' as the password.
 +
 . git clone https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/endpoint-wss
 . `mvn wildfly:deploy` to deploy on WildFly
-. Access http://localhost:8080/endpoint-wss
-.. See how the request is redirected to https
+. Access http://localhost:8080/endpoint-wss and notice how the request is redirected to https
 . In `websocket.js`, change ``wss'' to ``ws'', deploy it again and look for the following error in Developer Tools Console:
 +
 [source, text]
 ----
 Uncaught SecurityError: Failed to construct 'WebSocket': An insecure WebSocket connection may not be initiated from a page loaded over HTTPS.
 ----
-
 
 ## Comparing with REST
 
