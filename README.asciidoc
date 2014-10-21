@@ -177,9 +177,6 @@ Use ``websocket'' as the password.
         	<keystore path="websocket.keystore" relative-to="jboss.server.config.dir" keystore-password="websocket" alias="websocket"/>
         </ssl>
     </server-identities>
-    <authentication>
-        <truststore path="websocket.keystore" relative-to="jboss.server.config.dir" keystore-password="websocket"/>
-    </authentication>
 </security-realm>
 ----
 +
