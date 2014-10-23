@@ -112,7 +112,7 @@ https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/endpoint
 
 ## Securing WebSocket
 
-### URL-based security
+### User-based security
 
 . git clone https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/endpoint-security
 . Add a new user to WildFly
