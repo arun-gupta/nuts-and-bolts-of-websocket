@@ -74,7 +74,7 @@ image::images/openshift-websocket-routing.png[]
 
 ### Introduction
 
-Show the slides
+Slides
 
 ### Chat Server
 
@@ -190,7 +190,7 @@ Use ``websocket'' as the password.
 Uncaught SecurityError: Failed to construct 'WebSocket': An insecure WebSocket connection may not be initiated from a page loaded over HTTPS.
 ----
 
-## Embedded WebSocket using Undertow/WildFly
+## Embedded WebSocket using Undertow
 
 . git clone git@github.com:undertow-io/undertow.git
 . `mvn install` in the root
@@ -268,11 +268,9 @@ Slides
 
 Slides
 
-## Surviving Firewall and Proxy
-include::firewall.asciidoc[]
+## Production Tips
 
-## WebSocket Production Tips
-include::production.asciidoc[]
+Slides
 
 ## Client technologies (supporting other languages - Java APIs or .NET APIs)
 
