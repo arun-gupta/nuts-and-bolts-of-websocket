@@ -190,15 +190,6 @@ Use ``websocket'' as the password.
 Uncaught SecurityError: Failed to construct 'WebSocket': An insecure WebSocket connection may not be initiated from a page loaded over HTTPS.
 ----
 
-## Comparing with REST
-
-. https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/websocket-vs-rest-payload
-. https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/websocket-vs-rest
-
-## Contrast with SSE
-
-Use slides
-
 ## Embedded WebSocket using Undertow/WildFly
 
 . git clone git@github.com:undertow-io/undertow.git
@@ -239,40 +230,58 @@ jboss-eap-6.3> ./bin/jboss-cli.sh -c --command="/subsystem=web/connector=http/:w
 
 http://blog.arungupta.me/2014/08/load-balance-websockets-apache-httpd-techtip48/
 
-## Kaazing Gateway
+## STOMP over WebSocket
 
-https://github.com/arun-gupta/kaazing-openshift-cartridge
+. Provision ActiveMQ on OpenShift: https://github.com/arun-gupta/activemq-openshift-cartridge
+. https://github.com/arun-gupta/wildfly-samples/tree/master/websocket-stomp
+. Showcase http://demo.kaazing.com/demo/jms/javascript/?d=stomp-stock with ActiveMQ on OpenShift
 
-## Pub/Sub over WebSocket
-### JMS - Need further discussion
-### Showcase http://demo.kaazing.com/demo/jms/javascript/jms-javascript.html
-### Showcase http://demo.kaazing.com/demo/jms/javascript/?d=stomp-stock with ActiveMQ on OpenShift
-### MQTT, STOMP over WebSocket - Read details on http://www.amazon.com/The-Definitive-Guide-HTML5-WebSocket/dp/1430247401
+## Kaazing JMS Gateway
+
+. Pub/Sub over WebSocket
+. https://github.com/arun-gupta/kaazing-openshift-cartridge
+. Showcase http://demo.kaazing.com/demo/jms/javascript/jms-javascript.html
+
+
+## Compare with REST
+
+. https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/websocket-vs-rest-payload
+. https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/websocket-vs-rest
+
+## Compare with SSE
+
+Slides
+
+## MQTT over WebSocket
+
+TBD
 
 ## WebSocket using Atmosphere
 
-??
+https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/atmosphere-chat
+
+## What makes them scalable ?
+
+Slides
+
+## WebSocket Debugging
+
+Slides
 
 ## Surviving Firewall and Proxy
 include::firewall.asciidoc[]
-
-## WebSocket Debugging
-include::debugging.asciidoc[]
 
 ## WebSocket Production Tips
 include::production.asciidoc[]
 
 ## Client technologies (supporting other languages - Java APIs or .NET APIs)
 
-### Kaazing Client API
-
-## Native App (Objective C and Java Android)
-
-??
+. Kaazing Client API
+. Native App (Objective C and Java Android)
 
 ## Embedded and IoT
 
-. Peter to bring the two devices
+. Reveal the fun
 
 ## Cool demos
 

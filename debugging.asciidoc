@@ -1,2 +1,0 @@
-### Chrome Developer Tools
-### Wireshark (typically required when building custom protocols)

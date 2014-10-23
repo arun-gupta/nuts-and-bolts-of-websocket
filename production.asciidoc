@@ -1,2 +1,0 @@
-### Atmosphere
-### Share some of Kaazing experiences - clustering, LB, session failover, scale/capacity planning
