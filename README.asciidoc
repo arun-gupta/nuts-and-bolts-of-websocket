@@ -110,7 +110,7 @@ https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/google-d
 
 https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/endpoint-singleton
 
-## WebSocket Security
+## Securing WebSocket
 
 ### URL-based security
 
@@ -236,12 +236,11 @@ http://blog.arungupta.me/2014/08/load-balance-websockets-apache-httpd-techtip48/
 . https://github.com/arun-gupta/wildfly-samples/tree/master/websocket-stomp
 . Showcase http://demo.kaazing.com/demo/jms/javascript/?d=stomp-stock with ActiveMQ on OpenShift
 
-## Kaazing JMS Gateway
+## Pub/Sub over WebSocket
 
-. Pub/Sub over WebSocket
+. Kaazing JMS Gateway
 . https://github.com/arun-gupta/kaazing-openshift-cartridge
 . Showcase http://demo.kaazing.com/demo/jms/javascript/jms-javascript.html
-
 
 ## Compare with REST
 
