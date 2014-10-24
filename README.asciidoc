@@ -53,8 +53,7 @@ ws.onmessage = function(evt) { alert(evt.data) }
 
 ### Echo server
 
-. Copy the file from https://github.com/arun-gupta/nuts-and-bolts-of-websocket/blob/master/src/index.js
-. `git add index.js`
+. Replace `server.js` with the file from https://github.com/arun-gupta/nuts-and-bolts-of-websocket/blob/master/src/index.js
 . `npm install --save ws`
 . `git add --all`
 . `git commit`
