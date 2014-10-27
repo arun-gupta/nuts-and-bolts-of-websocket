@@ -113,20 +113,7 @@ https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/endpoint
 
 ### User-based security
 
-. git clone https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/endpoint-security
-. Add a new user to WildFly
-+
-[source, text]
-----
-wildfly-8.1.0.Final> ./bin/add-user.sh -a -u u1 -p p1 -g g1
-Added user 'u1' to file '/Users/arungupta/tools/wildfly-8.1.0.Final/standalone/configuration/application-users.properties'
-Added user 'u1' to file '/Users/arungupta/tools/wildfly-8.1.0.Final/domain/configuration/application-users.properties'
-Added user 'u1' with groups g1 to file '/Users/arungupta/tools/wildfly-8.1.0.Final/standalone/configuration/application-roles.properties'
-Added user 'u1' with groups g1 to file '/Users/arungupta/tools/wildfly-8.1.0.Final/domain/configuration/application-roles.properties'
-----
-+
-. `mvn wildfly:deploy`
-. Access the application at http://localhost:8080/endpoint-security/, use `u1` username and `p1` password. All other values are incorrect.
+http://blog.arungupta.me/2014/10/securing-websockets-username-password-servlet-security-techtip49/
 
 ### Over TLS
 
