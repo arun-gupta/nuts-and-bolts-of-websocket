@@ -117,64 +117,7 @@ http://blog.arungupta.me/2014/10/securing-websockets-username-password-servlet-s
 
 ### Over TLS
 
-. Create keystore
-+
-[source, text]
-----
-keytool -genkey -alias websocket -keyalg RSA -keystore websocket.keystore -validity 10950
-Enter keystore password:  
-Re-enter new password: 
-What is your first and last name?
-  [Unknown]:  Arun Gupta
-What is the name of your organizational unit?
-  [Unknown]:  JBoss Middleware
-What is the name of your organization?
-  [Unknown]:  Red Hat
-What is the name of your City or Locality?
-  [Unknown]:  San Jose
-What is the name of your State or Province?
-  [Unknown]:  CA
-What is the two-letter country code for this unit?
-  [Unknown]:  US
-Is CN=Arun Gupta, OU=JBoss Middleware, O=Red Hat, L=San Jose, ST=CA, C=US correct?
-  [no]:  yes
-
-Enter key password for <websocket>
-	(RETURN if same as keystore password):  
-Re-enter new password:
-----
-+
-Use ``websocket'' as the password.
-. Copy ``websocket.keystore'' in `standalone/configuration` directory.
-. Add https-listener in `standalone/configuration/standalone.xml`
-+
-[source,text]
-----
-<https-listener name="default-https" socket-binding="https" security-realm="WebSocketRealm"/>
-----
-+
-. Add the following `<security-realm>`
-+
-[source, text]
-----
-<security-realm name="WebSocketRealm">
-	<server-identities>
-    	<ssl protocol="TLS">
-        	<keystore path="websocket.keystore" relative-to="jboss.server.config.dir" keystore-password="websocket"/>
-        </ssl>
-    </server-identities>
-</security-realm>
-----
-+
-. git clone https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/endpoint-wss
-. `mvn wildfly:deploy` to deploy on WildFly
-. Access http://localhost:8080/endpoint-wss and notice how the request is redirected to https
-. In `websocket.js`, change ``wss'' to ``ws'', deploy it again and look for the following error in Developer Tools Console:
-+
-[source, text]
-----
-Uncaught SecurityError: Failed to construct 'WebSocket': An insecure WebSocket connection may not be initiated from a page loaded over HTTPS.
-----
+http://blog.arungupta.me/2014/10/securing-websocket-wss-https-tls-techtip50/
 
 ## Embedded WebSocket using Undertow
 
