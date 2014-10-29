@@ -81,11 +81,7 @@ https://github.com/javaee-samples/javaee7-samples/tree/master/websocket/chat
 
 #### Deploy to OpenShift
 
-. In cloned repo `git rm -rf src pom.xml`
-. `cp <chat dir>/target/chat.war deployments/ROOT.war`
-. `git add deployments/ROOT.war`
-. `git commit . -m"adding war"`
-. `git push`
+http://blog.arungupta.me/2014/10/websocket-chat-wildfly-openshift-techtip51/
 
 ### Collaborative Whiteboard
 
