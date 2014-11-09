@@ -4,6 +4,7 @@ Nuts and Bolts of WebSocket
 ## Introduction to WebSocket
 
 * WebSocket introduction slides
+* Use http://caniuse.com/websockets to check WebSocket compatibility
 * Chrome Developer Tools, Console
 +
 [source,text]
@@ -28,8 +29,8 @@ ws.onmessage = function(evt) { alert(evt.data) }
 ----
 +
 * Copy/paste fragment from websocket.org/echo.html
-** Show Firefox Developer Tools
-* Use http://caniuse.com/websockets to check WebSocket compatibility
+** Talk about Firefox Developer Tools
+* Click on `Connect' on http://www.websocket.org/echo.html. Show how messages sent from Developer Tools are not echoed back on HTML page, and vice versa.
 * Talk points
 ** WebSocket server is required, just like HTTP
 ** Do you want to write your own WebSocket server or use that is already battle-tested ? For example, 200-line HTTP server is useful to begin with but production nginx or HTTPD are used in production
