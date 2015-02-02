@@ -59,6 +59,7 @@ ws.onmessage = function(evt) { alert(evt.data) }
 . `git add --all`
 . `git commit`
 . `git push`
+. Access http://<appname>-<domain>.rhcloud.com/server.js to show changes.
 
 #### Test the echo server
 
